@@ -318,6 +318,15 @@ const ProductsMenu = React.forwardRef(
                   Top Sellers
                 </ListItemButton>
               </ListItem>
+              <ListItem>
+                <ListItemButton
+                  role="menuitem"
+                  {...getTargetProps(3)}
+                  onClick={() => navigation("/categories")}
+                >
+                  Categories
+                </ListItemButton>
+              </ListItem>
             </List>
           </Popper>
         </div>

@@ -32,7 +32,7 @@ export default function CardCustom({ title, image, price, id, oldPrice }) {
         }
         title={title}
       />
-      <Link to={`/products/${id}/${title.replace(" ", "-")}`}>
+      <Link to={`/products/${id}/${title?.replace(" ", "-")}`}>
         <CardMedia
           component="img"
           height="250"
@@ -60,7 +60,7 @@ export default function CardCustom({ title, image, price, id, oldPrice }) {
         </Box>
         <CardContent sx={{}}>
           <Typography variant="p" sx={{ float: "right" }}>
-            {price}₺
+            {price}
           </Typography>
           <Typography
             variant="p"
