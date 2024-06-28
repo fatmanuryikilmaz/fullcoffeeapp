@@ -11,10 +11,11 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function CardCustom({ title, image, price, id, oldPrice }) {
   const [favorite, setFavorite] = useState(false);
+
   return (
     <Card
       sx={{

@@ -338,6 +338,7 @@ const ProductsMenu = React.forwardRef(
 const NavBar = () => {
   const { targets, getTargetProps, setActiveIndex, focusNext, focusPrevious } =
     useRovingIndex();
+  const navigation = useNavigate();
   return (
     <>
       <Box
@@ -424,7 +425,7 @@ const NavBar = () => {
           <Box>
             <Favories />
           </Box>
-          <Box>
+          <Box onClick={() => navigation("/cart")}>
             <Basket />
           </Box>
         </Box>

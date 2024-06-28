@@ -25,7 +25,7 @@ export default function AdminSignIn() {
 
   return (
     <Container
-      component="main"
+      component="div"
       maxWidth="xs"
       sx={{
         color: "rgba(70, 46, 33, 1) !important",

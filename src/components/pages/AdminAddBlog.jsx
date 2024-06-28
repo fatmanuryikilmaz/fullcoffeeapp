@@ -16,7 +16,7 @@ const AdminAddBlog = () => {
 
   return (
     <Container
-      component="main"
+      component="div"
       sx={{
         color: "rgba(70, 46, 33, 1) !important",
         margin: "55px 0",

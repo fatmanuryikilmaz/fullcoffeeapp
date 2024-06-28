@@ -1,26 +1,27 @@
+import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import Layout from "./components/pages/Layout";
-import Home from "./components/pages/Home";
-import { useEffect } from "react";
-import NotFound from "./components/pages/NotFound";
-import Products from "./components/pages/Products";
-import ProductDetail from "./components/pages/ProductDetail";
-import SearchPage from "./components/pages/SearchPage";
-import TopSellers from "./components/pages/TopSellers";
-import Sales from "./components/pages/Sales";
-import SignUp from "./components/pages/SignUp";
-import Blog from "./components/pages/Blog";
-import SignIn from "./components/pages/SignIn";
+import AdminAddBlog from "./components/pages/AdminAddBlog";
+import AdminAddProduct from "./components/pages/AdminAddProduct";
+import AdminBlogs from "./components/pages/AdminBlogs";
+import AdminCategories from "./components/pages/AdminCategories";
+import AdminLayout from "./components/pages/AdminLayout";
+import AdminProductDetail from "./components/pages/AdminProductDetail";
 import AdminProducts from "./components/pages/AdminProducts";
 import AdminSignIn from "./components/pages/AdminSignIn";
-import AdminProductDetail from "./components/pages/AdminProductDetail";
-import AdminAddProduct from "./components/pages/AdminAddProduct";
-import AdminLayout from "./components/pages/AdminLayout";
-import AdminCategories from "./components/pages/AdminCategories";
-import AdminAddBlog from "./components/pages/AdminAddBlog";
-import AdminBlogs from "./components/pages/AdminBlogs";
+import Blog from "./components/pages/Blog";
 import Categories from "./components/pages/Categories";
+import Home from "./components/pages/Home";
+import Layout from "./components/pages/Layout";
+import NotFound from "./components/pages/NotFound";
+import ProductDetail from "./components/pages/ProductDetail";
+import Products from "./components/pages/Products";
+import Sales from "./components/pages/Sales";
+import SearchPage from "./components/pages/SearchPage";
+import SignIn from "./components/pages/SignIn";
+import SignUp from "./components/pages/SignUp";
+import TopSellers from "./components/pages/TopSellers";
+import Cart from "./components/pages/Cart";
 
 function App() {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ function App() {
             element={<ProductDetail />}
           ></Route>
           <Route path="/categories/" element={<Categories />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
 
           <Route
             path="/admin-products/:id/:title"
