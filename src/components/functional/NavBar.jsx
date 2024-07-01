@@ -400,20 +400,6 @@ const NavBar = () => {
           }}
         >
           <SearchInput />
-          <Link to="/sign-up" style={{ textDecoration: "none" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                cursor: "pointer",
-                color: "rgb(218, 202, 186)",
-              }}
-            >
-              <LockIcon />
-              <Typography variant="p">Sign Up</Typography>
-            </Box>
-          </Link>
         </Box>
         <Box
           sx={{
@@ -423,6 +409,19 @@ const NavBar = () => {
             color: "rgb(218, 202, 186)",
           }}
         >
+          <Link to="/sign-up" style={{ textDecoration: "none" }}>
+            <Box
+              sx={{
+                cursor: "pointer",
+                display: "flex",
+                gap: "5px",
+                position: "relative",
+                color: "rgb(218, 202, 186)",
+              }}
+            >
+              <LockIcon />
+            </Box>
+          </Link>
           <Box>
             <Favories />
           </Box>

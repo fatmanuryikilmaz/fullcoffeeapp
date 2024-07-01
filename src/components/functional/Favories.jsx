@@ -9,7 +9,8 @@ const Favories = () => {
       sx={{
         cursor: "pointer",
         fontSize: "large",
-        marginTop: "3px",
+        padding: "3px",
+        marginTop: "5px",
         position: "relative",
       }}
     >

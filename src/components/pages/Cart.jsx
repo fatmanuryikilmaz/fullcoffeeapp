@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const {
@@ -22,6 +23,7 @@ const Cart = () => {
     totalPrice,
   } = useCart();
 
+  const navigation = useNavigate();
   return (
     <Grid
       container
@@ -191,6 +193,7 @@ const Cart = () => {
               boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.15)",
             },
           }}
+          onClick={() => navigation("/")}
         >
           Proceed to checkout
         </Button>
