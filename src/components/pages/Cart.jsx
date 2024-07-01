@@ -10,42 +10,18 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import { useCart } from "../../context/CartContext";
 
 const Cart = () => {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      name: "Item 1",
-      quantity: 2,
-      price: "$10.00",
-      imageUrl: "https://via.placeholder.com/150",
-    },
-    {
-      id: 2,
-      name: "Item 2",
-      quantity: 1,
-      price: "$20.00",
-      imageUrl: "https://via.placeholder.com/150",
-    },
-  ]);
+  const {
+    cartItems,
+    addItem,
+    removeItem,
+    increaseQuantity,
+    decreaseQuantity,
+    totalPrice,
+  } = useCart();
 
-  const increaseQuantity = (id) => {
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  };
-
-  const decreaseQuantity = (id) => {
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
-    );
-  };
   return (
     <Grid
       container
@@ -67,7 +43,7 @@ const Cart = () => {
       >
         <Card sx={{ minWidth: 275, bgcolor: "transparent", boxShadow: "none" }}>
           <CardContent>
-            {items.map((item) => (
+            {cartItems.map((item) => (
               <Grid
                 container
                 key={item.id}
@@ -94,7 +70,7 @@ const Cart = () => {
                       {item.name}
                     </Typography>
                     <Typography sx={{ mb: 1.5, fontSize: "16px" }} variant="h6">
-                      Price: {item.price}
+                      Price: {item.price}.00₺
                     </Typography>
                   </Grid>
                   <Grid container sx={{ alignItems: "center" }}>
@@ -143,6 +119,7 @@ const Cart = () => {
                               boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.15)",
                             },
                           }}
+                          onClick={() => removeItem(item.id)}
                         >
                           Remove
                         </Button>
@@ -179,10 +156,10 @@ const Cart = () => {
           }}
         >
           <Typography variant="h6" sx={{ fontSize: "16px" }}>
-            Total of Product :
+            Total of Product : {cartItems?.length}
           </Typography>
           <Typography variant="h6" sx={{ fontSize: "16px" }}>
-            Shipping Total :
+            Shipping Total : 00.00₺
           </Typography>
           <hr
             style={{
@@ -194,7 +171,7 @@ const Cart = () => {
           />
 
           <Typography variant="h4" sx={{ fontSize: "24px" }}>
-            Total :
+            Total : {totalPrice}.00₺
           </Typography>
         </Grid>
         <Button

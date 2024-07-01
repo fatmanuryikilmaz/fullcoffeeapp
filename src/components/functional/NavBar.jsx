@@ -25,6 +25,7 @@ import Basket from "./Basket";
 import Favories from "./Favories";
 import CoffeeMakerRoundedIcon from "@mui/icons-material/CoffeeMakerRounded";
 import HamburgerMenu from "./HamburgerMenu";
+import { useCart } from "../../context/CartContext";
 
 const useRovingIndex = (options) => {
   const {

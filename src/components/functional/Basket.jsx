@@ -1,9 +1,12 @@
-import React from "react";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import { Box } from "@mui/joy";
 import { Typography } from "@mui/material";
+import React from "react";
+import { useCart } from "../../context/CartContext";
 
 const Basket = () => {
+  const { cartItems, totalPrice } = useCart();
+
   return (
     <Box
       sx={{
@@ -29,13 +32,13 @@ const Basket = () => {
           textAlign: "center",
         }}
       >
-        0
+        {cartItems?.length}
       </Typography>
       <Typography
         variant="span"
         sx={{ fontSize: "14px", marginTop: "5px", marginLeft: "7px" }}
       >
-        0,00 ₺
+        {totalPrice}.00₺
       </Typography>
     </Box>
   );

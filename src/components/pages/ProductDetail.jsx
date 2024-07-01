@@ -200,7 +200,7 @@ const ProductDetail = () => {
                 },
               }}
             >
-              Add To Basket
+              Add To Cart
             </Button>
           </Grid>
         </Grid>
